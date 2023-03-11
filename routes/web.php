@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CbrCurrencyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,4 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [CbrParserController::class, 'show']);
+Route::get('/', [CbrCurrencyController::class, 'show']);
