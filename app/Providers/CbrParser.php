@@ -11,7 +11,8 @@ class CbrParser extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        //егистрируем сервис-провайдер
+        $this->app->bind('CbrParser', 'App\Services\CbrParserService');
     }
 
     /**
