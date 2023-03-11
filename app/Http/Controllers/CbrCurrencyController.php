@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CbrCurrency;
 use Illuminate\Http\Request;
+use App\Services\CbrParserService;
 
 class CbrCurrencyController extends Controller
 {
@@ -37,6 +38,9 @@ class CbrCurrencyController extends Controller
     public function show(CbrCurrency $cbrCurrency)
     {
         //
+        $parser = new CbrParserService();
+    $data = $parser->parse();
+    return $data;
     }
 
     /**
