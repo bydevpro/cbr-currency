@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Services;
+use App\Models\CbrCurrency;
 use Illuminate\Support\Facades\Http;
 class CbrParserService
 {
@@ -25,6 +26,16 @@ class CbrParserService
             $json = json_encode($xml); 
             $data = json_decode($json, true); 
     
-            return $data; 
+            foreach($data['Valute'] as $value) {
+                // Create a new CbrCurrency object
+                $currency = new CbrCurrency;
+            $currency->currentId = $value['@attributes']['ID'];
+            $currency->currentNumCode = $value['NumCode'];
+            $currency->currentCode = $value['CharCode'];
+            $currency->currentName = $value['Name'];
+            $currency->currentValue = str_replace(',', '.', $value['Value']);
+            $currency->save();
+            }
+            return response()->json('Data inserted successfully');
         } 
     }

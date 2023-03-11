@@ -1,0 +1,40 @@
+/* Style for the container element */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* increased space between child elements */
+}
+
+/* Style for the child currency elements */
+.currency {
+  background-color: #fff; /* added a background color */
+  border-radius: 10px; /* increased border radius */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px; /* updated box-shadow */
+  display: flex;
+  flex-direction: column; /* updated flex direction to column */
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 300px;
+  padding: 20px; /* increased padding */
+}
+
+/* Style for the currency name */
+.currency-name {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 10px; /* added margin to separate name from charcode */ 
+}
+
+/* Style for the currency charcode */
+.currency-charcode {
+  color: #ff3a3a;
+  font-size: 1.2em; /* increased size */
+  margin-bottom: 20px; /* added margin to separate charcode from value */
+}
+
+/* Style for the currency value */
+.currency-value {
+  font-size: 1.4em; /* increased size */
+}

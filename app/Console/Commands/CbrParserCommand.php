@@ -8,21 +8,21 @@ use App\Services\CbrParserService;
 class CbrParserCommand extends Command
 {
     /**
-     * The name and signature of the console command.
+     * Команда артисан для парсинга с сайта цбрф
      *
      * @var string
      */
     protected $signature = 'parse:cbr';
 
     /**
-     * The console command description.
+     * описание команды.
      *
      * @var string
      */
     protected $description = 'Parse CBR data';
 
     /**
-     * Execute the console command.
+     * запуск команды.
      */
     public function handle(): void
     {

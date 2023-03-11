@@ -13,4 +13,4 @@ use App\Http\Controllers\CbrCurrencyController;
 |
 */
 
-Route::get('/', [CbrCurrencyController::class, 'show']);
+Route::get('/', [CbrCurrencyController::class, 'index']);

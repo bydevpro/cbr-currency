@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('cbr_currencies', function (Blueprint $table) {
             $table->id('id')->autoIncrement()->nullable(false);
-            $table->integer('currentId')->nullable(false);
-            $table->string('currentNumCode')->nullable(false);
-            $table->integer('currentCode')->nullable(false);
+            $table->string('currentId')->nullable(false);
+            $table->integer('currentNumCode')->nullable(false);
+            $table->string('currentCode')->nullable(false);
             $table->string('currentName')->nullable(false);
-            $table->double('currentValue')->nullable(false);
+            $table->double('currentValue', 15, 8)->nullable(false);
             $table->timestamps();
         });
     }
