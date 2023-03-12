@@ -1,5 +1,9 @@
 <h3>Парсер курса валют с ЦБРФ</h3>
+<p>Доп. зависимости</p>
 
+<p>composer require theanik/laravel-more-command --dev
+</p>
+<p>Протестить <a href="http://postcoder.ru">Postcoder</a></p>
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
