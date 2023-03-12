@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         // команда для парсинга xml файла с сайта cbr.ru каждые 3 часа 
-        $schedule->command('parse:cbr')->hourlyAt(3);
+        $schedule->command('parse:cbr')->everyThreeHours();
     }
 
     /**

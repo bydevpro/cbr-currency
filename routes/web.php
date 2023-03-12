@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CbrCurrencyController;
+use App\Http\Controllers\RefreshData;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,5 +13,18 @@ use App\Http\Controllers\CbrCurrencyController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/login', function(){
+    if(Auth::check()){
+        return redirect (route('user.callback'));
+    }
+    return view('login');
+})->name('login');
+Route::get('/', [CbrCurrencyController::class, 'index'])->middleware('auth')->name('index');
+Route::get('/getdata', [RefreshData::class, 'get']);
+Route::post('/registration', [\App\Http\Controllers\UserRegistration::class, 'registrator'])->name('registration');
 
-Route::get('/', [CbrCurrencyController::class, 'index']);
+Route::post('/login', [\App\Http\Controllers\UserLogin::class, 'login']);
+Route::get('/logout', function(){
+        Auth::logout();
+        return redirect ('/login');
+    });

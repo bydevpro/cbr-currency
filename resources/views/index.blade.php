@@ -1,14 +1,17 @@
 <html>
   <head>
-    <title>CbrParserService Example</title>
+    <title>Курс валют ЦБ РФ</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">  
+    <script type="text/javascript" src="../js/jquery.js"></script>
 </head>
   <body>
+    @include('header')
     <div class="container">
       <div class="row">
         <div class="col-md-8">
-        <div class="flex-container">
+        <div class="flex-container" id="currency-data">
+          
   @foreach($currencies as $row)
   <div class="currency">
    
@@ -30,18 +33,19 @@
 </div>
           </div>
         <div class="col-md-4">
-          <form>
+         
+          <form id='form-to-rub'>
             <!-- First currency conversion form -->
-            <div class="form-group">
+            <div class="form-group" >
               <h5>Конвертация в рубли</h5>
               <label for="amount1">Введите сумму:</label>
               <input type="number" class="form-control" id="amount1">
             </div>
-            <div class="form-group">
+            <div class="form-group" id="currency-form-1">
               <label for="currency1">Выберете валюту:</label>
               <select class="form-control" id="currency1">
               @foreach($currencies as $row)
-                <option value="{{ $row['currentValue'] }}">{{ $row['currentCode'] }}</option>
+                <option value="{{ $row['currentValue'] }}" id="currency-select">{{ $row['currentCode'] }}</option>
                 @endforeach
                 
               </select>
@@ -52,18 +56,18 @@
             </div>
             <button type="submit" class="btn btn-primary">Convert</button>
           </form>
-          <form>
+          <form id='form-to-valute'>
             <!-- First currency conversion form -->
             <div class="form-group">
               <h5>Конвертация в Валюту</h5>
               <label for="amount2">Введите сумму:</label>
               <input type="number" class="form-control" id="amount2">
             </div>
-            <div class="form-group">
+            <div class="form-group" id="currency-form-2">
               <label for="currency2">Выберете валюту:</label>
               <select class="form-control" id="currency2">
               @foreach($currencies as $row)
-                <option value="{{ $row['currentValue'] }}">{{ $row['currentCode'] }}</option>
+                <option value="{{ $row['currentValue'] }}" id="currency-select">{{ $row['currentCode'] }}</option>
                 @endforeach
                 
               </select>
@@ -74,5 +78,7 @@
             </div>
             <button type="submit2" class="btn btn-primary">Convert</button>
           </form>
+</div>
           <script src="../js/calculate.js"></script> 
           <script src="../js/calculate_from.js"></script> 
+          <script type="text/javascript" src="../js/refresh_data.js"></script>
