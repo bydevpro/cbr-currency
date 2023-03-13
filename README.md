@@ -1,4 +1,5 @@
 <h3>Парсер курса валют с ЦБРФ</h3>
+<p>Использует дату и время сервера</p>
 <p>Доп. зависимости</p>
 
 <p>composer require theanik/laravel-more-command --dev
